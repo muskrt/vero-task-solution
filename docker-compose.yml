@@ -1,13 +1,21 @@
 version: '3'
 
 services:
-  db_vero_digital:
+  vero-db:
     image: mcr.microsoft.com/mssql/server:latest
     environment:
-      ACCEPT_EULA: Y
-      SA_PASSWORD: 'PASSWORD1'
-      MSSQL_PID: Express 
+        ID: sa
+        ACCEPT_EULA: Y
+        MSSQL_SA_PASSWORD: 'Un!q@to2023'
+        MSSQL_PID: Express 
     ports:
       - "1433:1433"
-    container_name: sqlserver 
+    
+  web_server:
+    build: . 
+    depends_on:
+      - vero-db
+    ports:
+      - "8080:80"
     restart: always
+      
