@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db_vero_digital:
+    image: mcr.microsoft.com/mssql/server:latest
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: 'PASSWORD1'
+      MSSQL_PID: Express 
+    ports:
+      - "1433:1433"
+    container_name: sqlserver 
+    restart: always
