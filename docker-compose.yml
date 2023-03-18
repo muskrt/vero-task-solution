@@ -2,17 +2,16 @@ version: '3'
 
 services:
   vero-db:
-    image: mcr.microsoft.com/mssql/server:latest
-    environment:
-        ID: sa
-        ACCEPT_EULA: Y
-        MSSQL_SA_PASSWORD: 'Un!q@to2023'
-        MSSQL_PID: Express 
+    build:
+      context: ./ 
+      dockerfile: ./db.Dockerfile
     ports:
       - "1433:1433"
     
   web_server:
-    build: . 
+    build:
+      context: ./
+      dockerfile: ./web.Dockerfile
     depends_on:
       - vero-db
     ports:
