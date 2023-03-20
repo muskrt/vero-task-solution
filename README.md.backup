@@ -9,8 +9,16 @@ cd vero-task-solutions/solution-1
 chmod +x launcher
 ```
 ### 3. Run the launcher and wait until you see a link on the terminal(if you choose to run compose directly wait 45 seconds for Db). 
+```shell
+./launcher
+```
 ### 4. Copy the link to the browser.
+```png
+```
 ### 5. Results
-![image](solution1.png)
-![image](solution2.png)
+<p>
+  <img src="./solution1.png" width="45%" />
+  <img src="./solution2.png" width="45%" /> 
+</p>
+
 
