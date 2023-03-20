@@ -1,8 +1,8 @@
 ## How To Run 
 ### 1. Clone the github repo and cd to solution folder you wanna see or just download the solution folder and cd to that folder
 ```shell
-git clone https://token@github.com/muskrt/vero-task-solutions.git
-cd vero-task-solutions/solution-1
+git clone https://github.com/muskrt/vero-task-solution.git
+cd vero-task-solution/solution-1
 ```
 ### 2. Give execute permission to launcher(dont forget to check  is python interpreter path /bin/python3 )
 ```shell
