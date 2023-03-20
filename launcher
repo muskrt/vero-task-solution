@@ -1,0 +1,32 @@
+#!/bin/python3
+import os 
+import sys 
+import netifaces as ni
+import subprocess
+import time
+default_interface=str(subprocess.check_output("""
+                route | grep "default" | grep "home" | awk '{print $8}'
+            """, shell=True).decode()).strip()
+ip = ni.ifaddresses(default_interface)[ni.AF_INET][0]['addr']
+def run_compose():
+  try:
+    os.system('docker-compose up --detach --build --remove-orphans')
+    flag=int(subprocess.check_output("""
+                echo $?
+            """, shell=True).decode())
+    if flag==0:
+      pass
+    elif flag !=0:
+      os.system('docker compose up --detach --build --remove-orphans ')
+  except:
+    print('!!!!docker compose not found!!!!')
+      
+  
+def print_output_url():
+  print('\x1b[6;30;42m' +"waiting for database server...."+ '\x1b[0m')
+  time.sleep(45)
+  print(f"http://{ip}:8080")
+
+if __name__=="__main__":
+  run_compose()
+  print_output_url()

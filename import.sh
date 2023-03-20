@@ -7,6 +7,6 @@ do
         break
     else
         echo "not ready yet..."
-        sleep 1
+        sleep 5
     fi
 done
