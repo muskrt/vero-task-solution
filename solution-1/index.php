@@ -50,11 +50,12 @@ final class QuickDbTest
         $db->query($sql);
         $sql = "SELECT * FROM testing_table";
         $stmt = $db->query($sql);
+        echo "------------Solution##1------------";
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 
-echo "------------Solution##1------------";
+
 echo json_encode((new QuickDbTest())->runDbTest(), JSON_PRETTY_PRINT);
 echo "\nThe Problem has been hacked. ";
 echo "\u{1F600}";

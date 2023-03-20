@@ -26,8 +26,20 @@ def run_compose():
   
 def print_output_url():
   print('\x1b[6;30;42m' +"waiting for database server...."+ '\x1b[0m')
-  time.sleep(45)
-  print(f"http://{ip}:8080")
+  while True:
+    try:
+      page=str(subprocess.check_output(f"""
+        curl -s http://{ip}:8080
+          """,shell=True).decode())
+      if page.__contains__("Solution#"):
+        print(f"http://{ip}:8080")
+        break
+      else:
+        print("not ready")
+        raise Exception("sleep")
+    except:
+      time.sleep(3)
+
 
 if __name__=="__main__":
   flag=run_compose()
