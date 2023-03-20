@@ -13,7 +13,11 @@ chmod +x launcher
 ./launcher
 ```
 ### 4. Copy the link to the browser.
-```png
+```shell
+waiting for database server....
+not ready
+not ready
+http://host_ip:808
 ```
 ### 5. Results
 <p>

@@ -8,12 +8,16 @@ cd vero-task-solutions/solution-1
 ```shell
 chmod +x launcher
 ```
-### 3. Run the launcher and wait until you see a link on the terminal(if you choose to run compose directly wait 45 seconds for Db). 
+### 3. Run the launcher and wait until you see a link on the terminal(if you choose to run compose directly wait 45 seconds for db). 
 ```shell
 ./launcher
 ```
-### 4. Copy the link to the browser.
-```png
+### 4. Copy the link to the browser given by the Launcher like in the example.
+```shell
+waiting for database server....
+not ready
+not ready
+http://192.168.1.26:8080
 ```
 ### 5. Results
 <p>
