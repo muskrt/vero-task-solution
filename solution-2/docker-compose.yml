@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  vero-db:
+    build:
+      context: ./ 
+      dockerfile: ./db.Dockerfile
+    ports:
+      - "1433:1433"
+    
+  web_server:
+    build:
+      context: ./
+      dockerfile: ./web.Dockerfile
+    depends_on:
+      - vero-db
+    ports:
+      - "8080:80"
+    restart: always
+      

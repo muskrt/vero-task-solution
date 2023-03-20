@@ -54,6 +54,7 @@ final class QuickDbTest
     }
 }
 
+echo "------------Solution##1------------";
 echo json_encode((new QuickDbTest())->runDbTest(), JSON_PRETTY_PRINT);
 echo "\nThe Problem has been hacked. ";
 echo "\u{1F600}";
