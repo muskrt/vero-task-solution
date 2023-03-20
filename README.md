@@ -4,7 +4,7 @@
 git clone https://token@github.com/muskrt/vero-task-solutions.git
 cd vero-task-solutions/solution-1
 ```
-### 2. Give execute permission to launcher(dont forget check python is interpreter path /bin/python3 )
+### 2. Give execute permission to launcher(dont forget to check  is python interpreter path /bin/python3 )
 ```shell
 chmod +x launcher
 ```
