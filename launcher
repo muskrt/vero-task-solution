@@ -18,8 +18,10 @@ def run_compose():
       pass
     elif flag !=0:
       os.system('docker compose up --detach --build --remove-orphans ')
+    return 1
   except:
     print('!!!!docker compose not found!!!!')
+    return 0 
       
   
 def print_output_url():
@@ -28,5 +30,8 @@ def print_output_url():
   print(f"http://{ip}:8080")
 
 if __name__=="__main__":
-  run_compose()
-  print_output_url()
+  flag=run_compose()
+  if flag==1:
+    print_output_url()
+  else:
+    pass
